@@ -21,7 +21,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a76
 # Audio
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false
 AUDIO_FEATURE_ENABLED_DLKM := true
-AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := false
 AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
 AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := false
 AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := true
@@ -32,6 +31,9 @@ AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 AUDIO_FEATURE_ENABLED_SSR := true
 AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
+# AxionFx — disable conflicting audio enhancement
+AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := false
+AUDIO_FEATURE_ENABLED_AUDIOSPHERE := false
 BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 BOARD_USES_ALSA_AUDIO := true
@@ -189,4 +191,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 include vendor/xiaomi/miatoll/BoardConfigVendor.mk
 
 # Miui-Camera
--include vendor/xiaomi/miuicamera-miatoll/BoardConfigMiuiCamera.mk
+-include device/xiaomi/miuicamera-miatoll/BoardConfig.mk

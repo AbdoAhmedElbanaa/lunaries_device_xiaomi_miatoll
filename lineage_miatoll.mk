@@ -15,11 +15,20 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
 # Lunaris-AOSP
-LUNARIS_BUILD_TYPE := OFFICIAL
+LUNARIS_BUILD_TYPE := UNOFFICIAL
 WITH_GMS := true
 USE_REALITY_ENGINE := true
 TARGET_OPTIMIZED_DEXOPT := true
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_USE_MAPS := true
+TARGET_USE_FILES := true
+TARGET_USE_GPHOTOS := true
+TARGET_USE_GMAIL := true
+WITH_GMS_AICORE := true
+TARGET_USE_WALLPAPERS := true
+
+# AxionFx
+TARGET_INCLUDE_AXIONFX := true
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 Lunaris AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Show battery info and hardware capacities -->
+    <bool name="config_show_battery_info">true</bool>
+    <bool name="config_show_battery_cycle_count">true</bool>
+    <bool name="config_show_battery_design_capacity">true</bool>
+    <bool name="config_show_battery_maximum_capacity">true</bool>
+</resources>

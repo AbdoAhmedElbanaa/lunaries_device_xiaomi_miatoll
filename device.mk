@@ -137,7 +137,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,true)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_toggle,true)
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/charging_enabled)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled,1)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled,0)
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -288,7 +292,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
-    hardware/xiaomi
+    hardware/qcom-caf/wlan \
+    hardware/qcom-caf/wlan/qcwcn \
+    hardware/xiaomi \
+    packages/apps/AxionFx
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -372,5 +379,8 @@ PRODUCT_PACKAGES += \
 # Inherit proprietary targets
 $(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)
 
+# AxionFx
+$(call inherit-product-if-exists, packages/apps/AxionFx/config.mk)
+
 # Miui-Camera
-$(call inherit-product-if-exists, vendor/xiaomi/miuicamera-miatoll/MiuiCamera.mk)
+$(call inherit-product-if-exists, device/xiaomi/miuicamera-miatoll/device.mk)
